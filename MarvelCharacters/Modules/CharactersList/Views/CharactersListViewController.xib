@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersListViewController" customModule="iOS_App" customModuleProvider="target">
+            <connections>
+                <outlet property="apiUsageMessageLabel" destination="KV1-Y2-Cwp" id="gUw-Qd-Qt6"/>
+                <outlet property="apiUsageMessageView" destination="Luf-JU-VfQ" id="ABX-kr-JUc"/>
+                <outlet property="loader" destination="6Vo-Xt-KUG" id="gDd-To-sB2"/>
+                <outlet property="mainTableView" destination="qVY-B3-TS8" id="FgH-qN-XRD"/>
+                <outlet property="searchBar" destination="zzc-Xq-W6o" id="mRT-SI-S3U"/>
+                <outlet property="view" destination="iN0-l3-epB" id="GSR-DN-ftt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-B3-TS8">
+                    <rect key="frame" x="0.0" y="76" width="414" height="732"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <searchBar hidden="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zzc-Xq-W6o">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Luf-JU-VfQ" userLabel="apiUsageMessageView">
+                    <rect key="frame" x="0.0" y="56" width="414" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="api usage message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-Y2-Cwp" userLabel="apiUsageMessageLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="KV1-Y2-Cwp" secondAttribute="bottom" id="3Jp-LM-h1f"/>
+                        <constraint firstItem="KV1-Y2-Cwp" firstAttribute="top" secondItem="Luf-JU-VfQ" secondAttribute="top" id="Afw-7G-3nF"/>
+                        <constraint firstItem="KV1-Y2-Cwp" firstAttribute="leading" secondItem="Luf-JU-VfQ" secondAttribute="leading" id="eka-4y-tHa"/>
+                        <constraint firstAttribute="trailing" secondItem="KV1-Y2-Cwp" secondAttribute="trailing" id="luk-AY-IvU"/>
+                        <constraint firstAttribute="height" constant="20" id="u6K-j6-chA"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6Vo-Xt-KUG">
+                    <rect key="frame" x="188.5" y="385.5" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qVY-B3-TS8" firstAttribute="top" secondItem="Luf-JU-VfQ" secondAttribute="bottom" id="3fe-be-RhT"/>
+                <constraint firstAttribute="trailing" secondItem="Luf-JU-VfQ" secondAttribute="trailing" id="5G4-zn-2SP"/>
+                <constraint firstAttribute="trailing" secondItem="zzc-Xq-W6o" secondAttribute="trailing" id="F1S-bH-8jW"/>
+                <constraint firstItem="zzc-Xq-W6o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FkF-ML-SDu"/>
+                <constraint firstAttribute="bottom" secondItem="qVY-B3-TS8" secondAttribute="bottom" id="Gpx-FR-nKi"/>
+                <constraint firstAttribute="trailing" secondItem="qVY-B3-TS8" secondAttribute="trailing" id="KRY-IY-zQk"/>
+                <constraint firstItem="zzc-Xq-W6o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mts-Al-HD6"/>
+                <constraint firstItem="Luf-JU-VfQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mw9-t0-5Td"/>
+                <constraint firstItem="qVY-B3-TS8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VB8-26-aJi"/>
+                <constraint firstItem="6Vo-Xt-KUG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rCr-Qp-FtU"/>
+                <constraint firstItem="Luf-JU-VfQ" firstAttribute="top" secondItem="zzc-Xq-W6o" secondAttribute="bottom" id="weV-n0-sPF"/>
+                <constraint firstItem="6Vo-Xt-KUG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wsA-Kz-wEi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="31.884057971014496" y="57.589285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
