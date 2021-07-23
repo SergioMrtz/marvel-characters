@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCollectionViewCell" id="5L6-ek-m8P" customClass="ItemCollectionViewCell" customModule="iOS_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PYm-Uv-0vU">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-u6-PMI" userLabel="itemTitle">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-Ax-2a3">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Example Title (2021)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mgf-RT-MvE">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Mgf-RT-MvE" firstAttribute="leading" secondItem="GOW-u6-PMI" secondAttribute="leading" id="1Py-IZ-WWL"/>
+                    <constraint firstItem="Mgf-RT-MvE" firstAttribute="top" secondItem="GOW-u6-PMI" secondAttribute="top" id="5ZV-Vm-AlX"/>
+                    <constraint firstItem="Mgf-RT-MvE" firstAttribute="trailing" secondItem="GOW-u6-PMI" secondAttribute="trailing" id="UJO-h1-qOW"/>
+                    <constraint firstItem="GOW-u6-PMI" firstAttribute="leading" secondItem="PYm-Uv-0vU" secondAttribute="leading" constant="5" id="b5z-Xv-MBk"/>
+                    <constraint firstItem="cTf-Ax-2a3" firstAttribute="leading" secondItem="GOW-u6-PMI" secondAttribute="leading" id="fUr-4M-HOh"/>
+                    <constraint firstAttribute="bottom" secondItem="GOW-u6-PMI" secondAttribute="bottom" constant="5" id="hwq-MQ-DoC"/>
+                    <constraint firstItem="cTf-Ax-2a3" firstAttribute="top" secondItem="GOW-u6-PMI" secondAttribute="top" id="i7S-2W-7xn"/>
+                    <constraint firstItem="cTf-Ax-2a3" firstAttribute="trailing" secondItem="GOW-u6-PMI" secondAttribute="trailing" id="ml9-7e-9lU"/>
+                    <constraint firstItem="GOW-u6-PMI" firstAttribute="top" secondItem="PYm-Uv-0vU" secondAttribute="top" constant="5" id="oX2-n7-ILa"/>
+                    <constraint firstItem="cTf-Ax-2a3" firstAttribute="bottom" secondItem="GOW-u6-PMI" secondAttribute="bottom" id="rW4-ve-OHA"/>
+                    <constraint firstAttribute="trailing" secondItem="GOW-u6-PMI" secondAttribute="trailing" constant="5" id="v9H-yX-sXl"/>
+                    <constraint firstItem="Mgf-RT-MvE" firstAttribute="bottom" secondItem="GOW-u6-PMI" secondAttribute="bottom" id="v9u-m4-HQl"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="itemImage" destination="GOW-u6-PMI" id="Lr8-4s-qB4"/>
+                <outlet property="itemTitleLabel" destination="Mgf-RT-MvE" id="sCq-ID-cxc"/>
+            </connections>
+            <point key="canvasLocation" x="-452.17391304347831" y="-5.3571428571428568"/>
+        </collectionViewCell>
+    </objects>
+</document>

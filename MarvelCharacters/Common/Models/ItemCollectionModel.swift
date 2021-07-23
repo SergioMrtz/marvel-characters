@@ -8,9 +8,18 @@
 class ItemCollectionModel {
     let available: Int?
     let items: [String]?
+    let type: CollectionType
 
-    init(itemCollection: ItemCollection) {
+    init(itemCollection: ItemCollection, type: CollectionType) {
         self.available = itemCollection.available
         self.items = itemCollection.items?.map({$0.name ?? ""})
+        self.type = type
     }
+}
+
+enum CollectionType : String {
+    case comics = "Comics"
+    case events = "Events"
+    case series = "Series"
+    case stories = "Stories"
 }

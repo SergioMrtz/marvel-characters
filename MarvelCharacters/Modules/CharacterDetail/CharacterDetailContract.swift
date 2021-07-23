@@ -23,6 +23,7 @@ protocol CharacterDetailViewToPresenterProtocol {
 
 // MARK: Presenter -> View
 protocol CharacterDetailPresenterToViewProtocol : AnyObject {
+    func updateView(with character: CharacterDetailModel)
     /*
      func onGetListSuccess()
      func onGetListFailure()

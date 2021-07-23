@@ -55,7 +55,7 @@ public struct CharacterEntity {
         self.comics = json["comics"].dictionary.map{ItemCollection(json: $0)}
         self.series = json["series"].dictionary.map{ItemCollection(json: $0)}
         self.stories = json["stories"].dictionary.map{ItemCollection(json: $0)}
-        self.events = json["comics"].dictionary.map{ItemCollection(json: $0)}
+        self.events = json["events"].dictionary.map{ItemCollection(json: $0)}
 
         self.urls = json["urls"].array?.map{CharacterItemUrl(json: $0)}
     }

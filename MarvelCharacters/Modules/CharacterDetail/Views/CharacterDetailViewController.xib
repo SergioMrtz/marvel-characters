@@ -9,6 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailViewController" customModule="iOS_App" customModuleProvider="target">
             <connections>
+                <outlet property="characterDescriptionBodyLabel" destination="hPE-CK-KD9" id="3ak-hA-zVO"/>
+                <outlet property="characterDescriptionTitleLabel" destination="4uv-0S-yha" id="1o0-uI-m6D"/>
+                <outlet property="characterDescriptionView" destination="zaw-qb-RsL" id="lGH-dg-LAv"/>
+                <outlet property="characterImageView" destination="wTb-Mg-5AI" id="yUV-pS-g6q"/>
+                <outlet property="characterNameLabel" destination="nxb-R9-7ef" id="zeV-yY-ZbR"/>
+                <outlet property="comicsColletion" destination="cFr-ZM-bRO" id="sgA-nH-Zoo"/>
+                <outlet property="eventsCollection" destination="9xq-GU-kwK" id="Qqk-Wo-2bu"/>
+                <outlet property="seriesCollection" destination="eP5-eu-GBE" id="UzX-QS-kEN"/>
+                <outlet property="storiesCollection" destination="MYg-K5-fzE" id="cgd-sx-dGk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xdn-G5-SLq"/>
             </connections>
         </placeholder>
@@ -22,13 +31,12 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wTb-Mg-5AI">
                             <rect key="frame" x="10" y="5" width="120" height="120"/>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="120" id="faI-lr-q28"/>
                                 <constraint firstAttribute="width" constant="120" id="x55-n1-2mf"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxb-R9-7ef">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxb-R9-7ef">
                             <rect key="frame" x="140" y="48.5" width="72" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <nil key="textColor"/>
@@ -72,7 +80,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstItem="4uv-0S-yha" firstAttribute="top" secondItem="zaw-qb-RsL" secondAttribute="top" constant="5" id="KA0-g0-2FA"/>
                                 <constraint firstItem="4uv-0S-yha" firstAttribute="leading" secondItem="zaw-qb-RsL" secondAttribute="leading" constant="15" id="RJB-Y0-Y1X"/>
@@ -108,6 +115,7 @@
                         <constraint firstAttribute="trailing" secondItem="5bz-Ll-Kfl" secondAttribute="trailing" id="EWt-tY-NGa"/>
                         <constraint firstItem="eP5-eu-GBE" firstAttribute="leading" secondItem="jnP-TL-BNA" secondAttribute="leading" id="HHC-mV-tda"/>
                         <constraint firstItem="MYg-K5-fzE" firstAttribute="width" secondItem="jnP-TL-BNA" secondAttribute="width" id="Hmf-FG-AiH"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nxb-R9-7ef" secondAttribute="trailing" constant="5" id="Ln3-M4-IeK"/>
                         <constraint firstItem="5bz-Ll-Kfl" firstAttribute="top" secondItem="wTb-Mg-5AI" secondAttribute="bottom" id="NEs-u7-zy2"/>
                         <constraint firstItem="MYg-K5-fzE" firstAttribute="leading" secondItem="jnP-TL-BNA" secondAttribute="leading" id="OtE-aW-btS"/>
                         <constraint firstItem="nxb-R9-7ef" firstAttribute="centerY" secondItem="wTb-Mg-5AI" secondAttribute="centerY" id="Q0z-2j-dgy"/>
@@ -146,9 +154,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

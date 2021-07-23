@@ -17,11 +17,13 @@ class CharacterDetailPresenter: CharacterDetailViewToPresenterProtocol {
 
     func viewDidLoad() {
         print("View is loaded")
+        if let character = self.character {
+            self.view?.updateView(with: character)
+        }
     }
-
-
 }
 
 extension CharacterDetailPresenter: CharacterDetailInteractorToPresenterProtocol {
-
 }
+
+

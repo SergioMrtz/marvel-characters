@@ -24,23 +24,23 @@ class CharacterDetailModel {
         self.thumbnail = character.thumbnail
 
         if let comics = character.comics {
-            self.comics = ItemCollectionModel(itemCollection: comics)
+            self.comics = ItemCollectionModel(itemCollection: comics, type: .comics)
         } else {
             self.comics = nil
         }
 
         if let series = character.series {
-            self.series = ItemCollectionModel(itemCollection: series)
+            self.series = ItemCollectionModel(itemCollection: series, type: .series)
         } else {
             self.series = nil
         }
-        if let events = character.series {
-            self.events = ItemCollectionModel(itemCollection: events)
+        if let events = character.events {
+            self.events = ItemCollectionModel(itemCollection: events, type: .events)
         } else {
             self.events = nil
         }
         if let stories = character.stories {
-            self.stories = ItemCollectionModel(itemCollection: stories)
+            self.stories = ItemCollectionModel(itemCollection: stories, type: .stories)
         } else {
             self.stories = nil
         }
