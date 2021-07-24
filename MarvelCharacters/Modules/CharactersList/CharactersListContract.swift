@@ -18,6 +18,7 @@ protocol CharactersListViewToPresenterProtocol {
     func updateMaxIndex(index: Int)
     func characterSelectedAtIndex(index: IndexPath)
     func getApiUsageMesage() -> String
+    func searchBarTextChanged(with text: String)
     /*
      func refresh()
      func numberOfRowsInSection() -> Int
@@ -28,8 +29,9 @@ protocol CharactersListViewToPresenterProtocol {
 
 // MARK: Presenter -> View
 protocol CharactersListPresenterToViewProtocol : AnyObject {
-    func onGetCharacterListSuccess()
+    func onGetCharacterListSuccess(scrollToTop: Bool)
     func onGetCharacterListFailure()
+    func showNoResultsView()
     /*
      func onGetListSuccess()
      func onGetListFailure()
@@ -42,7 +44,7 @@ protocol CharactersListPresenterToViewProtocol : AnyObject {
 // MARK: Presenter -> Interactor
 protocol CharactersListPresenterToInteractorProtocol {
     var presenter: CharactersListInteractorToPresenterProtocol? { get set }
-    func getCharacterList(offset: Int)
+    func getCharacterList(offset: Int, text: String?, newSearch: Bool)
     func getCharacterDetail(id: Int) -> CharacterEntity?
     /*
      func fetchQuotesSuccess(quotes: [APIQuote])
@@ -54,7 +56,7 @@ protocol CharactersListPresenterToInteractorProtocol {
 
 // MARK: Interactor -> Presenter
 protocol CharactersListInteractorToPresenterProtocol : AnyObject {
-    func getCharacterListSuccess(characterList: [CharacterListModel], offset: Int, apiMessage: String)
+    func getCharacterListSuccess(characterList: [CharacterListModel], offset: Int, name: String?, apiMessage: String)
     func getCharacterListFailure()
     /*
      func fetchQuotesSuccess(quotes: [APIQuote])

@@ -16,8 +16,8 @@ class CharacterApiDataManager {
     let pubK = "9c316dca1698b5d3c903486651218524"
     let privK = "699e4ffe34abd14b84e325c7baf3a6fbbbe9f92d"
 
-    func fetchCharacterList(isFirst:Bool = false,
-                            offset:Int = 0,
+    func fetchCharacterList(offset:Int = 0,
+                            nameStartsWith: String? = nil,
                             completion: @escaping (Result<CharactersListEntity, Error>) -> Void) {
 
         let timestamp = currentTimestamp()
@@ -28,10 +28,15 @@ class CharacterApiDataManager {
         let ts = "?ts=" + timestamp
         let apiKey = "&apikey=" + pubK
         let hash = "&hash=" + hashMD5
-        let limit = isFirst ? "&limit=40" : ""
         let offset = offset != 0 ? "&offset=" + String(offset) : ""
 
-        url += ts + apiKey + hash + limit + offset
+        let name = nameStartsWith != nil
+            ? nameStartsWith! != ""
+                ? "&nameStartsWith=" + String(nameStartsWith!)
+                : ""
+            : ""
+
+        url += ts + apiKey + hash + offset + name
 
         Provider.fetch(url, completion: { result  in
             switch result {

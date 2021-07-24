@@ -30,6 +30,7 @@ class CharactersListViewController: UIViewController {
         self.mainTableView.dataSource = self
         self.mainTableView.delegate = self
         self.mainTableView.register(UINib(nibName: self.cellIdentifier, bundle: nil), forCellReuseIdentifier: self.cellIdentifier)
+        self.searchBar.delegate = self
         //VIEW SETUP
         configureNavigationBar()
         loader.startAnimating()
@@ -48,8 +49,12 @@ extension CharactersListViewController {
 }
 
 extension CharactersListViewController: CharactersListPresenterToViewProtocol {
-    func onGetCharacterListSuccess() {
+    func onGetCharacterListSuccess(scrollToTop: Bool) {
         self.mainTableView.reloadData()
+        if scrollToTop {
+            self.mainTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            self.maxIndexPath = 0
+        }
         if let apiMessage = self.presenter?.getApiUsageMesage(), apiMessage.count > 0 {
             self.apiUsageMessageLabel.text = apiMessage
             self.apiUsageMessageView.isHidden = false
@@ -61,6 +66,11 @@ extension CharactersListViewController: CharactersListPresenterToViewProtocol {
 
     func onGetCharacterListFailure() {
         //
+    }
+
+    func showNoResultsView() {
+        self.apiUsageMessageView.isHidden = true
+        self.mainTableView.isHidden = true
     }
 
 }
@@ -78,7 +88,7 @@ extension CharactersListViewController: UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! CharacterListItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as!CharacterListItemCell
         if let character = self.presenter?.characterAtIndex(index: indexPath) {
             cell.configureCell(character: character)
         }
@@ -96,6 +106,14 @@ extension CharactersListViewController: UITableViewDataSource, UITableViewDelega
         self.presenter?.characterSelectedAtIndex(index: indexPath)
     }
 
+}
+
+extension CharactersListViewController : UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.presenter?.searchBarTextChanged(with: searchText)
+        print(searchText)
+    }
 }
 /*
 extension CharactersListViewController : UIScrollViewDelegate {

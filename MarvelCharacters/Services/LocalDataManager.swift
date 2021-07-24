@@ -23,6 +23,10 @@ class LocalDataManager {
         }
     }
 
+    func clearEntities() {
+        self.storedEntities = []
+    }
+
     func getCharacter(id: Int) -> CharacterEntity? {
         let character = self.storedEntities.filter({$0.id == id}).first
         return character
