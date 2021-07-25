@@ -32,10 +32,10 @@ class CharacterDetailViewController: UIViewController {
         self.presenter?.viewDidLoad()
     }
 
-    private func hideView(uselessView: UIView) {
-        uselessView.isHidden = true
-        let zeroHeightConstraint = NSLayoutConstraint(item: uselessView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0)
-        uselessView.addConstraint(zeroHeightConstraint)
+    private func hideView(_ view: UIView) {
+        view.isHidden = true
+        let zeroHeightConstraint = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 0)
+        view.addConstraint(zeroHeightConstraint)
     }
 
 }
@@ -53,7 +53,7 @@ extension CharacterDetailViewController: CharacterDetailPresenterToViewProtocol 
         if let description = character.description, description != "" {
             self.characterDescriptionBodyLabel.text = description
         } else {
-            self.hideView(uselessView: self.characterDescriptionView)
+            self.hideView(self.characterDescriptionView)
         }
 
         // Collections (comics, series, etc)
@@ -61,28 +61,28 @@ extension CharacterDetailViewController: CharacterDetailPresenterToViewProtocol 
         if let comics = character.comics, comics.items?.count ?? 0 > 0 {
             self.comicsColletion.configure(with: comics)
         } else {
-            self.hideView(uselessView: self.comicsColletion)
+            self.hideView(self.comicsColletion)
         }
 
         // Series
         if let series = character.series, series.items?.count ?? 0 > 0 {
             self.seriesCollection.configure(with: series)
         } else {
-            self.hideView(uselessView: self.seriesCollection)
+            self.hideView(self.seriesCollection)
         }
 
         // Stories
         if let stories = character.stories, stories.items?.count ?? 0 > 0 {
             self.storiesCollection.configure(with: stories)
         } else {
-            self.hideView(uselessView: self.storiesCollection)
+            self.hideView(self.storiesCollection)
         }
 
         // Events
         if let events = character.events, events.items?.count ?? 0 > 0 {
             self.eventsCollection.configure(with: events)
         } else {
-            self.hideView(uselessView: self.eventsCollection)
+            self.hideView(self.eventsCollection)
         }
 
         self.getCharacterImage(from: character.thumbnail)

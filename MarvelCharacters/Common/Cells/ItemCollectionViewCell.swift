@@ -20,6 +20,9 @@ class ItemCollectionViewCell : UICollectionViewCell {
     override func prepareForReuse() {
         self.itemImage.image = nil
         self.itemTitleLabel.text = ""
+        self.itemTitleLabel.textColor = .label
+        self.itemTitleLabel.font = self.itemTitleLabel.font.withSize(13)
+        self.itemImage.backgroundColor = .systemBackground
     }
 
     func configureCell(with item: String, image: UIImage?) {

@@ -68,12 +68,19 @@ extension ItemCollectionView : UICollectionViewDataSource, UICollectionViewDeleg
         }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items?.count ?? 0
+        return (self.available ?? 0) > 20 ? 21 : (items?.count ?? 0)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = itemsCollectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! ItemCollectionViewCell
-        cell.configureCell(with: self.items?[indexPath.row] ?? "", image: self.image)
+        if indexPath.row == 20 {
+            cell.itemTitleLabel.text = " . . ."
+            cell.itemTitleLabel.font = cell.itemTitleLabel.font.withSize(48)
+            cell.itemTitleLabel.textColor = .darkGray
+            cell.itemImage.backgroundColor = .lightGray
+        } else {
+            cell.configureCell(with: self.items?[indexPath.row] ?? "", image: self.image)
+        }
         return cell
     }
 

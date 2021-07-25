@@ -32,72 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
-            landmarkName = "onGetCharacterListSuccess(scrollToTop:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C79A12A4-5C91-4BBD-A73A-64B13552FD7C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelCharacters/Common/Cells/CharacterListItemCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "prepareForReuse()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7240BE92-9004-47EE-8380-2E4AAC16DF9D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelCharacters/Services/CharacterApiDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "fetchCharacterList(offset:nameStartsWith:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7240BE92-9004-47EE-8380-2E4AAC16DF9D - 59ecbac05e062b35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOS_App.CharacterApiDataManager.fetchCharacterList(offset: Swift.Int, nameStartsWith: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;iOS_App.CharactersListEntity, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "iOS App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smartimu/marvel-characters/MarvelCharacters/Services/CharacterApiDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "2884">
-               </Location>
-               <Location
-                  uuid = "7240BE92-9004-47EE-8380-2E4AAC16DF9D - d6f0af215c1bacb6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;SwiftyJSON.JSON, Swift.Error&gt;) -&gt; () in iOS_App.CharacterApiDataManager.fetchCharacterList(offset: Swift.Int, nameStartsWith: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;iOS_App.CharactersListEntity, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "iOS App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smartimu/marvel-characters/MarvelCharacters/Services/CharacterApiDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "203">
-               </Location>
-            </Locations>
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

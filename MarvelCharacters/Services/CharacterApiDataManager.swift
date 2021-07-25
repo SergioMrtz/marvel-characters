@@ -12,21 +12,20 @@ class CharacterApiDataManager {
 
     let baseURL = "https://gateway.marvel.com"
     let charactersService = "/v1/public/characters"
-    //TODO: Obfuscate
-    let pubK = "9c316dca1698b5d3c903486651218524"
-    let privK = "699e4ffe34abd14b84e325c7baf3a6fbbbe9f92d"
+    let pubK: Data = Data([57, 99, 51, 49, 54, 100, 99, 97, 49, 54, 57, 56, 98, 53, 100, 51, 99, 57, 48, 51, 52, 56, 54, 54, 53, 49, 50, 49, 56, 53, 50, 52])
+    let privK: Data = Data([54, 57, 57, 101, 52, 102, 102, 101, 51, 52, 97, 98, 100, 49, 52, 98, 56, 52, 101, 51, 50, 53, 99, 55, 98, 97, 102, 51, 97, 54, 102, 98, 98, 98, 101, 57, 102, 57, 50, 100])
 
     func fetchCharacterList(offset:Int = 0,
                             nameStartsWith: String? = nil,
                             completion: @escaping (Result<CharactersListEntity, Error>) -> Void) {
 
         let timestamp = currentTimestamp()
-        let hashMD5 = (timestamp + privK + pubK).md5()
+        let hashMD5 = (timestamp + String(bytes: privK, encoding: .utf8)! + String(bytes: pubK, encoding: .utf8)!).md5()
 
         var url: String = baseURL + charactersService
 
         let ts = "?ts=" + timestamp
-        let apiKey = "&apikey=" + pubK
+        let apiKey = "&apikey=" + String(bytes: pubK, encoding: .utf8)!
         let hash = "&hash=" + hashMD5
         let offset = offset != 0 ? "&offset=" + String(offset) : ""
 
