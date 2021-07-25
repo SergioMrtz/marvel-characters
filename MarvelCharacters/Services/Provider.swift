@@ -25,13 +25,12 @@ class Provider {
             switch response.result {
             case .success(let data):
 
-                print("Success")
+                print("Request Success")
                 let json = JSON(data)
                 completion(.success(json))
 
             case .failure(let error):
-
-                print("Failure")
+                print("Request Failure. Error: \(error.responseCode ?? -1), :\(error.errorDescription ?? "no info")")
                 completion(.failure(error))
 
             }

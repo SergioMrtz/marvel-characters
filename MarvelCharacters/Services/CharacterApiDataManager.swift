@@ -36,7 +36,7 @@ class CharacterApiDataManager {
             : ""
 
         url += ts + apiKey + hash + offset + name
-
+        print("URL: \(url)")
         Provider.fetch(url, completion: { result  in
             switch result {
                 case .success(let data):

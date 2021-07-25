@@ -16,7 +16,6 @@ class CharacterDetailPresenter: CharacterDetailViewToPresenterProtocol {
     var character: CharacterDetailModel?
 
     func viewDidLoad() {
-        print("View is loaded")
         if let character = self.character {
             self.view?.updateView(with: character)
         }

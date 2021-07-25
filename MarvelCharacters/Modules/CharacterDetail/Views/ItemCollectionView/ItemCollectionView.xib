@@ -15,7 +15,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemCollectionTitle (elements)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ie-gE-Xw8" userLabel="labelTitle">
@@ -25,7 +25,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Eji-jP-HLY" userLabel="itemsCollectionView">
-                    <rect key="frame" x="0.0" y="21" width="414" height="107"/>
+                    <rect key="frame" x="0.0" y="21" width="414" height="128"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dxd-jD-mLi">
                         <size key="itemSize" width="128" height="128"/>
@@ -38,10 +38,10 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="4ie-gE-Xw8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="0sq-bb-wI5"/>
-                <constraint firstItem="Eji-jP-HLY" firstAttribute="top" secondItem="4ie-gE-Xw8" secondAttribute="bottom" id="GhD-aZ-dee"/>
+                <constraint firstItem="Eji-jP-HLY" firstAttribute="top" secondItem="4ie-gE-Xw8" secondAttribute="bottom" priority="999" id="GhD-aZ-dee"/>
                 <constraint firstItem="Eji-jP-HLY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="L4F-MM-Wfu"/>
-                <constraint firstItem="4ie-gE-Xw8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="iGi-Y1-y1H"/>
-                <constraint firstAttribute="bottom" secondItem="Eji-jP-HLY" secondAttribute="bottom" id="kE0-J8-D3L"/>
+                <constraint firstItem="4ie-gE-Xw8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="5" id="iGi-Y1-y1H"/>
+                <constraint firstAttribute="bottom" secondItem="Eji-jP-HLY" secondAttribute="bottom" priority="999" id="kE0-J8-D3L"/>
                 <constraint firstAttribute="trailing" secondItem="Eji-jP-HLY" secondAttribute="trailing" id="y78-AR-V8M"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

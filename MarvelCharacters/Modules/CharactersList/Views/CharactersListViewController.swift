@@ -112,7 +112,6 @@ extension CharactersListViewController: UITableViewDataSource, UITableViewDelega
 
         if indexPath.row > self.maxIndexPath {
             self.maxIndexPath = indexPath.row
-            print(self.maxIndexPath)
             self.presenter?.updateMaxIndex(index: indexPath.row)
         }
 
@@ -129,6 +128,5 @@ extension CharactersListViewController : UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.presenter?.searchBarTextChanged(with: searchText)
-        print(searchText)
     }
 }

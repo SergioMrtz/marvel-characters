@@ -26,7 +26,6 @@ class CharactersListPresenter: CharactersListViewToPresenterProtocol {
     var requestInProgress: Bool?
 
     func viewDidLoad() {
-        print("View is loaded")
         self.characterList = []
         interactor?.getCharacterList(offset: 0, text: nil, newSearch: true)
     }
@@ -59,7 +58,7 @@ class CharactersListPresenter: CharactersListViewToPresenterProtocol {
         if let characterDetail = self.interactor?.getCharacterDetail(id: character?.id ?? 0) {
             self.router?.navigateToCharacterDetail(on: self.view, character: characterDetail)
         } else {
-            print("Character not found")
+            print("ERROR - Character not found")
         }
     }
 
