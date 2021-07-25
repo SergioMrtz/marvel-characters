@@ -31,6 +31,7 @@ protocol CharactersListViewToPresenterProtocol {
 protocol CharactersListPresenterToViewProtocol : AnyObject {
     func onGetCharacterListSuccess(scrollToTop: Bool)
     func onGetCharacterListFailure()
+    func showLoader()
     func showNoResultsView()
     /*
      func onGetListSuccess()

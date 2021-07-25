@@ -16,6 +16,7 @@ class CharactersListViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mainTableView: UITableView!
     @IBOutlet var loader: UIActivityIndicatorView!
+    @IBOutlet var infoMessageLabel: UILabel!
 
     var cellIdentifier = "CharacterListItemCell"
     var maxIndexPath: Int = 0
@@ -33,9 +34,10 @@ class CharactersListViewController: UIViewController {
         self.searchBar.delegate = self
         //VIEW SETUP
         configureNavigationBar()
-        loader.startAnimating()
+        self.loader.startAnimating()
         presenter?.viewDidLoad()
     }
+
 }
 
 
@@ -65,12 +67,27 @@ extension CharactersListViewController: CharactersListPresenterToViewProtocol {
     }
 
     func onGetCharacterListFailure() {
-        //
+        self.loader.stopAnimating()
+        self.apiUsageMessageView.isHidden = true
+        self.mainTableView.isHidden = true
+        self.infoMessageLabel.text = "Sorry, an error occurred"
+        self.infoMessageLabel.isHidden = false
     }
 
     func showNoResultsView() {
         self.apiUsageMessageView.isHidden = true
         self.mainTableView.isHidden = true
+        self.infoMessageLabel.text = "No characters found"
+        self.infoMessageLabel.isHidden = false
+        self.loader.stopAnimating()
+    }
+
+    func showLoader() {
+        self.infoMessageLabel.isHidden = true
+        self.mainTableView.isHidden = true
+        self.apiUsageMessageView.isHidden = true
+        self.loader.isHidden = false
+        self.loader.startAnimating()
     }
 
 }
@@ -115,18 +132,3 @@ extension CharactersListViewController : UISearchBarDelegate {
         print(searchText)
     }
 }
-/*
-extension CharactersListViewController : UIScrollViewDelegate {
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let currentOffset = scrollView.contentOffset
-
-        if Int(currentOffset.y) < self.previousOffset {
-            print("Subiendo, oculta")
-        } else if Int(currentOffset.y) > self.previousOffset {
-            print("Bajando, muestra")
-        }
-        previousOffset = Int(currentOffset.y)
-    }
-}
-*/

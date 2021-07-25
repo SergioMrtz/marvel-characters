@@ -12,7 +12,7 @@ class CharacterListItemCell: UITableViewCell {
     @IBOutlet var characterPortraitImageView: UIImageView!
     @IBOutlet var characterNameLabel: UILabel!
 
-    let imageCache = NSCache<NSString, UIImage>()
+    var id: Int?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,16 +20,19 @@ class CharacterListItemCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
+        self.id = nil
         self.characterNameLabel.text = nil
         self.characterPortraitImageView.image = nil
     }
 
     func configureCell(character: CharacterListModel) {
         self.characterNameLabel.text = character.name
+        self.id = character.id
         self.setupCharacterImage(thumbnail: character.thumbnail)
     }
 
     func setupCharacterImage(thumbnail: (path: String?, extension: String?)?) {
+        self.characterPortraitImageView.tag = self.id ?? -1
         if let imgPath = thumbnail?.path, let imgExtension = thumbnail?.extension {
             let urlString = imgPath.replacingOccurrences(of: "http", with: "https") + "/portrait_small." + imgExtension
             guard let url = URL(string: urlString) else {
@@ -44,11 +47,14 @@ class CharacterListItemCell: UITableViewCell {
 extension UIImageView {
 
     func load(url: URL, dispatchGroup: DispatchGroup? = nil) {
+        let tag = self.tag
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: url) {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
-                            self?.image = image
+                            if tag == self?.tag {
+                                self?.image = image
+                            }
                             dispatchGroup?.leave()
                         }
                     }

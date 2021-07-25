@@ -19,7 +19,6 @@ class CharactersListInteractor: CharactersListPresenterToInteractorProtocol {
         characterApiDataManager.fetchCharacterList(offset: offset,
                                                    nameStartsWith: text,
                                                    completion: { result  in
-            //self.requestInProcess = false
             switch result {
                 case .success(let data):
                     guard let characterList = data.characters?.map({CharacterListModel(characterEntity: $0)}) else {
@@ -29,8 +28,6 @@ class CharactersListInteractor: CharactersListPresenterToInteractorProtocol {
                     if newSearch {
                         self.characterLocalDataManager.clearEntities()
                     }
-                    //self.offsetRequested = offset
-                    //self.lastTextRequested = text
                     self.characterLocalDataManager.updateEntities(entities: data)
                     let dataOffset = data.offset ?? 0
                     let apiMessage = data.attributedText ?? ""

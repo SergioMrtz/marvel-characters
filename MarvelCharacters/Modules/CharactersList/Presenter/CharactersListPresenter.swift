@@ -45,11 +45,11 @@ class CharactersListPresenter: CharactersListViewToPresenterProtocol {
     func updateMaxIndex(index: Int) {
         let currentCharacterCount = characterList?.count ?? 0
         if index > currentCharacterCount - 10 {
-
             guard (currentCharacterCount > self.offsetRequested), self.requestInProgress == false else {
                 return
             }
             self.requestInProgress = true
+            //self.view?.showLoader()
             self.interactor?.getCharacterList(offset: currentCharacterCount, text: self.searchBarText, newSearch: false)
         }
     }
@@ -84,6 +84,7 @@ class CharactersListPresenter: CharactersListViewToPresenterProtocol {
             }
             self.offsetRequested = 0
             self.requestInProgress = true
+            self.view?.showLoader()
             self.interactor?.getCharacterList(offset: 0, text: searchBarText, newSearch: true)
         }
         print("Search \(self.searchBarTimer!.userInfo as! String)")
@@ -116,7 +117,7 @@ extension CharactersListPresenter: CharactersListInteractorToPresenterProtocol {
 
     func getCharacterListFailure() {
         self.requestInProgress = false
-        //
+        self.view?.onGetCharacterListFailure()
     }
 
     

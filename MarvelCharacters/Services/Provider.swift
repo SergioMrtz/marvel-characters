@@ -15,11 +15,12 @@ class Provider {
                       parameters: Parameters? = nil,
                       completion: @escaping (Result<JSON, Error>) -> Void){
 
-        let request2 = AF.request(requestURL,
+        let safeURL = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let request = AF.request(safeURL,
                                   method: method,
                                   parameters: parameters)
 
-        request2.validate().responseJSON { response in
+        request.validate().responseJSON { response in
 
             switch response.result {
             case .success(let data):

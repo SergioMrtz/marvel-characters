@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="apiUsageMessageLabel" destination="KV1-Y2-Cwp" id="gUw-Qd-Qt6"/>
                 <outlet property="apiUsageMessageView" destination="Luf-JU-VfQ" id="ABX-kr-JUc"/>
+                <outlet property="infoMessageLabel" destination="g6f-ew-Tyd" id="91T-GC-K0j"/>
                 <outlet property="loader" destination="6Vo-Xt-KUG" id="gDd-To-sB2"/>
                 <outlet property="mainTableView" destination="qVY-B3-TS8" id="FgH-qN-XRD"/>
                 <outlet property="searchBar" destination="zzc-Xq-W6o" id="mRT-SI-S3U"/>
@@ -49,6 +50,12 @@
                         <constraint firstAttribute="height" constant="20" id="u6K-j6-chA"/>
                     </constraints>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no results / error info message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6f-ew-Tyd">
+                    <rect key="frame" x="20" y="106" width="374" height="20.5"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6Vo-Xt-KUG">
                     <rect key="frame" x="188.5" y="385.5" width="37" height="37"/>
                 </activityIndicatorView>
@@ -56,7 +63,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="qVY-B3-TS8" firstAttribute="top" secondItem="Luf-JU-VfQ" secondAttribute="bottom" id="3fe-be-RhT"/>
+                <constraint firstAttribute="trailing" secondItem="g6f-ew-Tyd" secondAttribute="trailing" constant="20" id="4PT-0M-0tz"/>
                 <constraint firstAttribute="trailing" secondItem="Luf-JU-VfQ" secondAttribute="trailing" id="5G4-zn-2SP"/>
+                <constraint firstItem="g6f-ew-Tyd" firstAttribute="top" secondItem="zzc-Xq-W6o" secondAttribute="bottom" constant="50" id="B7r-rt-6lN"/>
                 <constraint firstAttribute="trailing" secondItem="zzc-Xq-W6o" secondAttribute="trailing" id="F1S-bH-8jW"/>
                 <constraint firstItem="zzc-Xq-W6o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FkF-ML-SDu"/>
                 <constraint firstAttribute="bottom" secondItem="qVY-B3-TS8" secondAttribute="bottom" id="Gpx-FR-nKi"/>
@@ -64,6 +73,7 @@
                 <constraint firstItem="zzc-Xq-W6o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mts-Al-HD6"/>
                 <constraint firstItem="Luf-JU-VfQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mw9-t0-5Td"/>
                 <constraint firstItem="qVY-B3-TS8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VB8-26-aJi"/>
+                <constraint firstItem="g6f-ew-Tyd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="oAd-bw-oMF"/>
                 <constraint firstItem="6Vo-Xt-KUG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rCr-Qp-FtU"/>
                 <constraint firstItem="Luf-JU-VfQ" firstAttribute="top" secondItem="zzc-Xq-W6o" secondAttribute="bottom" id="weV-n0-sPF"/>
                 <constraint firstItem="6Vo-Xt-KUG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wsA-Kz-wEi"/>
