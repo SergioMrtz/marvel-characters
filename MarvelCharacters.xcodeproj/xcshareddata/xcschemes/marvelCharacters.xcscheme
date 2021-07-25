@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "99FA793726A5C70F009F3BF5"
-               BuildableName = "iOS App.app"
-               BlueprintName = "iOS App"
-               ReferencedContainer = "container:marvelCharacters.xcodeproj">
+               BuildableName = "MarvelCharacters-iOSApp.app"
+               BlueprintName = "MarvelCharacters-iOSApp"
+               ReferencedContainer = "container:MarvelCharacters.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "99F1EA0F26ADD82100658EF5"
+               BuildableName = "MarvelCharacters-iOSAppTests.xctest"
+               BlueprintName = "MarvelCharacters-iOSAppTests"
+               ReferencedContainer = "container:MarvelCharacters.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -45,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99FA793726A5C70F009F3BF5"
-            BuildableName = "iOS App.app"
-            BlueprintName = "iOS App"
-            ReferencedContainer = "container:marvelCharacters.xcodeproj">
+            BuildableName = "MarvelCharacters-iOSApp.app"
+            BlueprintName = "MarvelCharacters-iOSApp"
+            ReferencedContainer = "container:MarvelCharacters.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99FA793726A5C70F009F3BF5"
-            BuildableName = "iOS App.app"
-            BlueprintName = "iOS App"
-            ReferencedContainer = "container:marvelCharacters.xcodeproj">
+            BuildableName = "MarvelCharacters-iOSApp.app"
+            BlueprintName = "MarvelCharacters-iOSApp"
+            ReferencedContainer = "container:MarvelCharacters.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

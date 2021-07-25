@@ -9,12 +9,16 @@ class CharacterListModel {
     let id: Int?
     let name: String?
     let thumbnail: (path: String?, extension: String?)?
-    let fav: Bool = false
 
     init(characterEntity: CharacterEntity) {
         self.id = characterEntity.id
         self.name = characterEntity.name
         self.thumbnail = characterEntity.thumbnail
-        //Buscar si es fav
+    }
+
+    init(name: String, id: Int, thumbnail: (String, String)) {
+        self.name = name
+        self.id = id
+        self.thumbnail = thumbnail
     }
 }

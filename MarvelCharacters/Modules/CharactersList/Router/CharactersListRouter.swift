@@ -14,9 +14,5 @@ class CharactersListRouter: CharactersListPresenterToRouterProtocol {
         let viewController = view as! CharactersListViewController
         viewController.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
-
-
-    func navigateToCharacterDetail(character: CharacterEntity) {
-    }
     
 }

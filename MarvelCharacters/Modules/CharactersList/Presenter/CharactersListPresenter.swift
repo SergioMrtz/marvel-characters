@@ -27,6 +27,7 @@ class CharactersListPresenter: CharactersListViewToPresenterProtocol {
 
     func viewDidLoad() {
         self.characterList = []
+        self.requestInProgress = true
         interactor?.getCharacterList(offset: 0, text: nil, newSearch: true)
     }
 
@@ -48,7 +49,6 @@ class CharactersListPresenter: CharactersListViewToPresenterProtocol {
                 return
             }
             self.requestInProgress = true
-            //self.view?.showLoader()
             self.interactor?.getCharacterList(offset: currentCharacterCount, text: self.searchBarText, newSearch: false)
         }
     }

@@ -13,50 +13,22 @@ protocol CharacterDetailViewToPresenterProtocol {
     var interactor: CharacterDetailPresenterToInteractorProtocol? { get set }
     var router: CharacterDetailPresenterToRouterProtocol? { get set }
     func viewDidLoad()
-    /*
-     func refresh()
-     func numberOfRowsInSection() -> Int
-     func didSelectRowAt(index: Int)
-     func deselectRowAt(index: Int)
-     */
 }
 
 // MARK: Presenter -> View
 protocol CharacterDetailPresenterToViewProtocol : AnyObject {
     func updateView(with character: CharacterDetailModel)
-    /*
-     func onGetListSuccess()
-     func onGetListFailure()
-     func showHUD()
-     func hideHUD()
-     func deselectRowAt(row: Int)
-     */
 }
 
 // MARK: Presenter -> Interactor
 protocol CharacterDetailPresenterToInteractorProtocol {
     var presenter: CharacterDetailInteractorToPresenterProtocol? { get set }
-    /*
-     func fetchQuotesSuccess(quotes: [APIQuote])
-     func fetchQuotesFailure(errorCode: Int)
-     func getQuoteSuccess(_ quote: APIQuote)
-     func getQuoteFailure()
-     */
 }
 
 // MARK: Interactor -> Presenter
 protocol CharacterDetailInteractorToPresenterProtocol : AnyObject {
-    /*
-     func fetchQuotesSuccess(quotes: [APIQuote])
-     func fetchQuotesFailure(errorCode: Int)
-     func getQuoteSuccess(_ quote: APIQuote)
-     func getQuoteFailure()
-     */
 }
 
 // MARK: Presenter -> Router
 protocol CharacterDetailPresenterToRouterProtocol {
-    /*
-
-     */
 }
