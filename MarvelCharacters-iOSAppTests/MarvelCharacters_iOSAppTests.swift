@@ -8,7 +8,7 @@
 import XCTest
 @testable import MarvelCharacters_iOSApp
 
-class MarvelCharacters_iOSAppTests: XCTestCase {
+class CharacterListPresenter_XCTests: XCTestCase {
 
     var sut: CharactersListPresenter!
 

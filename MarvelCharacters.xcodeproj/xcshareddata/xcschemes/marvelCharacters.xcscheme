@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MarvelCharacters.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9992CD3A26AF225D004D2C90"
+               BuildableName = "MarvelCharacters-iOSAppUITests.xctest"
+               BlueprintName = "MarvelCharacters-iOSAppUITests"
+               ReferencedContainer = "container:MarvelCharacters.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
