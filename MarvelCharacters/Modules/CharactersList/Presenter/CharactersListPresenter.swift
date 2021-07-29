@@ -30,7 +30,7 @@ class CharactersListPresenter {
         interactor?.getCharacterList(offset: offset, text: text, newSearch: isNewSearch)
     }
 
-    @objc private func performSearchTextChanged() {
+    @objc func performSearchTextChanged() {
         if let searchBarText = self.searchBarTimer?.userInfo as? String {
 
             var newText: Bool = false
