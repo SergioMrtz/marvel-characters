@@ -21,7 +21,6 @@ class CharacterDetailAssembly {
         presenter.router = router
 
         interactor.presenter = presenter
-        //router.presenter = presenter
 
         let characterDetailModel = CharacterDetailModel(character: character)
         presenter.character = characterDetailModel

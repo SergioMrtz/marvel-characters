@@ -40,10 +40,12 @@ class CharacterDetailViewController: UIViewController {
 
 }
 
+/// MARK: Presenter -> ViewController
 extension CharacterDetailViewController: CharacterDetailPresenterToViewProtocol {
 
     func updateView(with character: CharacterDetailModel) {
 
+        // Name
         if let name = character.name {
             self.characterNameLabel.text = name
             self.navigationItem.title = name
@@ -85,10 +87,11 @@ extension CharacterDetailViewController: CharacterDetailPresenterToViewProtocol 
             self.hideView(self.eventsCollection)
         }
 
+        //Image
         self.getCharacterImage(from: character.thumbnail)
     }
 
-    func getCharacterImage(from thumbnail: (path: String?, extension: String?)?) {
+    private func getCharacterImage(from thumbnail: (path: String?, extension: String?)?) {
         if let thumbnail = thumbnail, let imgPath = thumbnail.path, let imgExtension = thumbnail.extension {
             let urlString = imgPath.replacingOccurrences(of: "http", with: "https") + "/standard_large." + imgExtension
             guard let url = URL(string: urlString) else {
@@ -107,11 +110,10 @@ extension CharacterDetailViewController: CharacterDetailPresenterToViewProtocol 
     }
 }
 
-
+/// MARK: NavigationBar
 extension CharacterDetailViewController {
 
     func configureNavigationBar() {
-        //self.navigationItem.title = "Name"
         self.navigationController?.navigationBar.backgroundColor = .systemBackground
         self.edgesForExtendedLayout = []
     }

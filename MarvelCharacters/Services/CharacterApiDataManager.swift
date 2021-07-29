@@ -17,7 +17,23 @@ class CharacterApiDataManager {
 
     func fetchCharacterList(offset:Int = 0,
                             nameStartsWith: String? = nil,
-                            completion: @escaping (Result<CharactersListEntity, Error>) -> Void) {
+                            completion: @escaping (Result<CharactersListEntity, MCErrorType>) -> Void) {
+
+        let url = self.getURL(offset: offset, nameStartsWith: nameStartsWith)
+        print("URL: \(url)")
+
+        Provider.fetch(url, completion: { result  in
+            switch result {
+                case .success(let data):
+                    let parsedData = CharactersListEntity(json: data)
+                    completion(.success(parsedData))
+                case .failure(let error):
+                    completion(.failure(error))
+            }
+        })
+    }
+
+    private func getURL(offset: Int, nameStartsWith: String?) -> String {
 
         let timestamp = currentTimestamp()
         let hashMD5 = (timestamp + String(bytes: privK, encoding: .utf8)! + String(bytes: pubK, encoding: .utf8)!).md5()
@@ -36,20 +52,7 @@ class CharacterApiDataManager {
             : ""
 
         url += ts + apiKey + hash + offset + name
-        print("URL: \(url)")
-        Provider.fetch(url, completion: { result  in
-            switch result {
-                case .success(let data):
-                    let parsedData = CharactersListEntity(json: data)
-                    completion(.success(parsedData))
-                case .failure(let failure):
-                    completion(.failure(failure))
-            }
-        })
-    }
-
-    func fetchSmallPortraitImage(completion: @escaping (Result<Data, Error>) -> Void) {
-
+        return url
     }
 
     private func currentTimestamp() -> String {

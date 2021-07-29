@@ -31,7 +31,8 @@ class CharacterListItemCell: UITableViewCell {
         self.setupCharacterImage(thumbnail: character.thumbnail)
     }
 
-    func setupCharacterImage(thumbnail: (path: String?, extension: String?)?) {
+    private func setupCharacterImage(thumbnail: (path: String?, extension: String?)?) {
+        // imageview tag is used to check if the cell still is showing the same character when the image is loaded
         self.characterPortraitImageView.tag = self.id ?? -1
         if let imgPath = thumbnail?.path, let imgExtension = thumbnail?.extension {
             let urlString = imgPath.replacingOccurrences(of: "http", with: "https") + "/portrait_small." + imgExtension

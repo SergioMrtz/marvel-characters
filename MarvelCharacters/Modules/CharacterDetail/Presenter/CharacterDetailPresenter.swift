@@ -7,14 +7,17 @@
 
 import UIKit
 
-class CharacterDetailPresenter: CharacterDetailViewToPresenterProtocol {
+class CharacterDetailPresenter {
     
     weak var view: CharacterDetailPresenterToViewProtocol?
     var interactor: CharacterDetailPresenterToInteractorProtocol?
     var router: CharacterDetailPresenterToRouterProtocol?
 
     var character: CharacterDetailModel?
+}
 
+/// MARK: View -> Presenter
+extension CharacterDetailPresenter: CharacterDetailViewToPresenterProtocol {
     func viewDidLoad() {
         if let character = self.character {
             self.view?.updateView(with: character)
@@ -22,7 +25,7 @@ class CharacterDetailPresenter: CharacterDetailViewToPresenterProtocol {
     }
 }
 
+/// MARK: Interactor -> Presenter
 extension CharacterDetailPresenter: CharacterDetailInteractorToPresenterProtocol {
 }
-
 

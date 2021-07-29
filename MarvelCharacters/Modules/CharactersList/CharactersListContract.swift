@@ -24,7 +24,7 @@ protocol CharactersListViewToPresenterProtocol {
 // MARK: Presenter -> View
 protocol CharactersListPresenterToViewProtocol : AnyObject {
     func onGetCharacterListSuccess(scrollToTop: Bool)
-    func onGetCharacterListFailure()
+    func onGetCharacterListFailure(errorMessage: String)
     func showLoader()
     func showNoResultsView()
 }
@@ -39,7 +39,7 @@ protocol CharactersListPresenterToInteractorProtocol {
 // MARK: Interactor -> Presenter
 protocol CharactersListInteractorToPresenterProtocol : AnyObject {
     func getCharacterListSuccess(characterList: [CharacterListModel], offset: Int, name: String?, apiMessage: String)
-    func getCharacterListFailure()
+    func getCharacterListFailure(error: MCErrorType)
 }
 
 // MARK: Presenter -> Router

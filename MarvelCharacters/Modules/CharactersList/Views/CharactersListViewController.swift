@@ -21,10 +21,6 @@ class CharactersListViewController: UIViewController {
     var cellIdentifier = "CharacterListItemCell"
     var maxIndexPath: Int = 0
 
-    //lazy var previousOffset: Int = 0
-
-    private let imagesCache = NSCache<NSNumber,UIImage>()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         //Do any additional setup after loading the view
@@ -40,7 +36,7 @@ class CharactersListViewController: UIViewController {
 
 }
 
-
+/// MARK: Navigartion Bar
 extension CharactersListViewController {
 
     func configureNavigationBar() {
@@ -50,6 +46,7 @@ extension CharactersListViewController {
     }
 }
 
+/// MARK: Presenter -> ViewController
 extension CharactersListViewController: CharactersListPresenterToViewProtocol {
     func onGetCharacterListSuccess(scrollToTop: Bool) {
         self.mainTableView.reloadData()
@@ -66,11 +63,11 @@ extension CharactersListViewController: CharactersListPresenterToViewProtocol {
         self.loader.stopAnimating()
     }
 
-    func onGetCharacterListFailure() {
+    func onGetCharacterListFailure(errorMessage: String) {
         self.loader.stopAnimating()
         self.apiUsageMessageView.isHidden = true
         self.mainTableView.isHidden = true
-        self.infoMessageLabel.text = "Sorry, an error occurred"
+        self.infoMessageLabel.text = errorMessage
         self.infoMessageLabel.isHidden = false
     }
 
@@ -92,7 +89,7 @@ extension CharactersListViewController: CharactersListPresenterToViewProtocol {
 
 }
 
-
+/// MARK: TableView
 extension CharactersListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -124,8 +121,8 @@ extension CharactersListViewController: UITableViewDataSource, UITableViewDelega
 
 }
 
+/// MARK: SearchBar
 extension CharactersListViewController : UISearchBarDelegate {
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.presenter?.searchBarTextChanged(with: searchText)
     }
